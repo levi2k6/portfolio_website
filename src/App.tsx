@@ -20,6 +20,10 @@ const gradientAnimation = keyframes`
   }
 `;
 
+// CSS noise texture as a data URI (very subtle)
+const noiseTexture =
+  'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><filter id="n" x="0" y="0"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="200" height="200" fill="white" filter="url(%23n)" fill-opacity="0.04"/></svg>';
+
 // Create a theme instance
 const theme = createTheme({
   palette: {
@@ -61,10 +65,11 @@ function App() {
       <Box 
         sx={{ 
           minHeight: '100vh',
-          background: 'linear-gradient(-45deg, #0a192f, #1a365d, #2c5282, #2b6cb0)',
+          background: 'linear-gradient(-45deg, #0a192f 0%, #1a365d 40%, #2c5282 70%, #2b6cb0 100%)',
           backgroundSize: '300% 300%',
-          animation: `${gradientAnimation} 8s ease infinite`,
+          animation: `${gradientAnimation} 12s ease-in-out infinite`,
           position: 'relative',
+          overflow: 'hidden',
           '&::before': {
             content: '""',
             position: 'absolute',
@@ -72,12 +77,24 @@ function App() {
             left: 0,
             right: 0,
             bottom: 0,
-            background: 'rgba(10, 25, 47, 0.4)', // Reduced overlay opacity
+            background: 'rgba(10, 25, 47, 0.3)',
             zIndex: 0
+          },
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundImage: `url(${noiseTexture})`,
+            opacity: 0.5,
+            pointerEvents: 'none',
+            zIndex: 1
           }
         }}
       >
-        <Box sx={{ position: 'relative', zIndex: 1 }}>
+        <Box sx={{ position: 'relative', zIndex: 2 }}>
           <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
           <Container maxWidth="lg">
             <Box component="main" sx={{ pt: 8 }}>

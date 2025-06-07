@@ -72,9 +72,13 @@ export default function Navbar({ activeSection, setActiveSection }: NavbarProps)
       <AppBar 
         position="fixed" 
         sx={{ 
-          bgcolor: scrolled ? 'background.paper' : 'transparent',
-          boxShadow: scrolled ? 1 : 0,
-          transition: 'all 0.3s ease-in-out'
+          bgcolor: 'transparent',
+          background: 'rgba(20, 30, 50, 0.65)',
+          boxShadow: scrolled ? 2 : 0,
+          backdropFilter: 'blur(12px)',
+          borderBottom: '2px solid',
+          borderImage: 'linear-gradient(90deg, #2196f3 0%, #21cbf3 100%) 1',
+          transition: 'all 0.3s cubic-bezier(.23,1.01,.32,1)',
         }}
       >
         <Toolbar>
@@ -86,15 +90,27 @@ export default function Navbar({ activeSection, setActiveSection }: NavbarProps)
                 sx={{
                   color: 'text.primary',
                   position: 'relative',
+                  fontWeight: 700,
+                  fontSize: '1.1rem',
+                  letterSpacing: 1,
+                  px: 2,
+                  background: 'none',
+                  transition: 'color 0.2s',
                   '&::after': {
                     content: '""',
                     position: 'absolute',
                     width: activeSection === item.id ? '100%' : '0%',
-                    height: '2px',
+                    height: '3px',
                     bottom: 0,
                     left: 0,
-                    bgcolor: 'primary.main',
-                    transition: 'width 0.3s ease-in-out',
+                    borderRadius: 2,
+                    background: activeSection === item.id
+                      ? 'linear-gradient(90deg, #2196f3 0%, #21cbf3 100%)'
+                      : 'transparent',
+                    transition: 'width 0.3s cubic-bezier(.23,1.01,.32,1)',
+                  },
+                  '&:hover': {
+                    color: 'primary.main',
                   },
                   '&:hover::after': {
                     width: '100%',

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {
   Box,
   Container,
@@ -6,7 +5,7 @@ import {
   Button,
   Paper,
 } from '@mui/material';
-import { GitHub, LinkedIn, Email, Twitter, Phone } from '@mui/icons-material';
+import { GitHub, LinkedIn, Email, Phone } from '@mui/icons-material';
 
 export default function Contact() {
   const socialLinks = [

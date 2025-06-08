@@ -82,10 +82,10 @@ export default function About() {
               <Typography variant="body1" paragraph color="text.secondary" align="left">
                 Hello, I'm a passionate software developer with a keen interest in creating
                 innovative solutions that make a difference. My journey in software development
-                began after graduating highshool when I realize that I hyperfixate a lot about 
+                began after I graduated highshool when I realize that I hyperfixate a lot about 
                 large and complex systems that I do not understand. That is why I chose this 
-                career path for me to learn and uncover the truth of these logistics that is enormous 
-                and far greater than myself.
+                career path for me to learn and uncover the truth of these enormous logistics that is  
+                far greater than myself.
               </Typography>
               <Typography variant="body1" paragraph color="text.secondary" align="left">
                 I specialize in backend, and I'm particularly interested in

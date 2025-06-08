@@ -6,7 +6,7 @@ import {
   Button,
   Paper,
 } from '@mui/material';
-import { GitHub, LinkedIn, Email, Twitter } from '@mui/icons-material';
+import { GitHub, LinkedIn, Email, Twitter, Phone } from '@mui/icons-material';
 
 export default function Contact() {
   const socialLinks = [
@@ -29,6 +29,11 @@ export default function Contact() {
           border: '1.5px solid',
           borderImage: 'linear-gradient(120deg, #2196f3 0%, #21cbf3 100%) 1',
           position: 'relative',
+          animation: 'fadeInUp 1s cubic-bezier(.23,1.01,.32,1) both',
+          '@keyframes fadeInUp': {
+            '0%': { opacity: 0, transform: 'translateY(40px)' },
+            '100%': { opacity: 1, transform: 'none' },
+          },
         }}>
           <Typography variant="h5" gutterBottom>
             Connect With Me
@@ -61,12 +66,38 @@ export default function Contact() {
                 {link.label}
               </Button>
             ))}
-            <Typography variant="body2" color="primary" sx={{ fontWeight: 500, pl: 0 }}>
-              Email: kogmawa@gmail.com
-            </Typography>
-            <Typography variant="body2" color="primary" sx={{ fontWeight: 500, pl: 0 }}>
-              Phone:09167623624 
-            </Typography>
+            <Box sx={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: 1,
+              py: 1.5,
+              px: 2,
+              border: '1px solid',
+              borderColor: 'primary.main',
+              borderRadius: 2,
+              minHeight: '48px'
+            }}>
+              <Email sx={{ color: 'primary.main' }} />
+              <Typography sx={{ fontWeight: 600 }}>
+                kogmawa@gmail.com
+              </Typography>
+            </Box>
+            <Box sx={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: 1,
+              py: 1.5,
+              px: 2,
+              border: '1px solid',
+              borderColor: 'primary.main',
+              borderRadius: 2,
+              minHeight: '48px'
+            }}>
+              <Phone sx={{ color: 'primary.main' }} />
+              <Typography sx={{ fontWeight: 600 }}>
+                09167623624
+              </Typography>
+            </Box>
           </Box>
         </Paper>
       </Box>

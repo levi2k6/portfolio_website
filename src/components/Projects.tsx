@@ -5,6 +5,7 @@ import VGIS from '../assets/VGIS.jpeg';
 import VGIS_mobile from '../assets/VGIS_mobile.png';
 import BitBuddy from '../assets/BitBuddy.png';
 import cpclibrary from '../assets/cpclibrary.jpeg';
+import portfolio from '../assets/portfolio.png';
 
 interface Project {
   title: string;
@@ -56,7 +57,16 @@ const projects: Project[] = [
     githubUrl: "https://github.com/Scef24/PersonalProj/tree/master",
     gitText: "view github",
     gitLogo: "github",
-  }  
+  },
+   {
+    title: "Portfolio Website",
+    description: "This is the website of this portfolio.",
+    image: portfolio, 
+    technologies: ["React + Vite", "Typescript", "MUI" ],
+    githubUrl: "https://github.com/levi2k6/portfolio_website",
+    gitText: "view github",
+    gitLogo: "github",
+  }   
   // Add more projects as needed
 ];
 

@@ -1,7 +1,14 @@
 import { Box, Typography, Button, Container } from '@mui/material';
-import { GitHub, LinkedIn, Email } from '@mui/icons-material';
+import { GitHub, LinkedIn, Description } from '@mui/icons-material';
+import Resume from '../assets/Resume.pdf';
 
 export default function Hero() {
+
+  const handleResume = () => {
+    window.open(Resume);
+  }
+
+
   return (
     <Container maxWidth="md">
       <Box
@@ -12,6 +19,11 @@ export default function Hero() {
           justifyContent: 'center',
           alignItems: 'flex-start',
           gap: 3,
+          animation: 'fadeInUp 1s cubic-bezier(.23,1.01,.32,1) both',
+          '@keyframes fadeInUp': {
+            '0%': { opacity: 0, transform: 'translateY(40px)' },
+            '100%': { opacity: 1, transform: 'none' },
+          },
         }}
       >
         <Typography
@@ -70,7 +82,7 @@ export default function Hero() {
             color="primary"
             size="large"
             startIcon={<LinkedIn />}
-            href="https://linkedin.com/in/yourusername"
+            href="https://linkedin.com/in/arañez-levi-77a28136a"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -80,10 +92,10 @@ export default function Hero() {
             variant="contained"
             color="primary"
             size="large"
-            startIcon={<Email />}
-            href="mailto:your.email@example.com"
+            startIcon={<Description />}
+            onClick={handleResume}
           >
-            Contact Me
+            Resume 
           </Button>
         </Box>
       </Box>

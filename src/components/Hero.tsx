@@ -53,7 +53,7 @@ export default function Hero() {
           color="text.secondary"
           sx={{ fontWeight: 'bold' }}
         >
-          I build software for people.
+          I build software for fun.
         </Typography>
         
         <Typography
